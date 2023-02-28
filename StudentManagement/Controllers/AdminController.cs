@@ -57,5 +57,22 @@ namespace StudentManagement.Controllers
             var res = service.GetTeacher(Id);
             return Ok(res);
         }
+        [HttpGet]
+        [Route("Subject")]
+        public IActionResult GetSubjects()
+        {
+            SubjectService service= new SubjectService(dbContext);
+            var res = service.GetSubject();
+            return Ok(res);
+        }
+        
+        [HttpDelete]
+        [Route("Student")]
+        public IActionResult DeleteStudents(Guid Id)
+        {
+            StudentService service = new StudentService(dbContext);
+            var res = service.DeleteStudent(Id);
+            return Ok(res);
+        }
     }
 }

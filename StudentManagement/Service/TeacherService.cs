@@ -25,12 +25,19 @@ namespace StudentManagement.Service
             dbContext.SaveChanges();
             return obj;
         }
-
         public object GetTeacher(Guid Id)
         {
             var teacher = dbContext.Teachers.Find(Id);
+            if (teacher == null)
+            {
+                return "Not Found";
+            }
             var obj = from s in dbContext.Students where s.Subject == teacher.Subject select new {s.Subject, s.StudentName};
-            return obj;
+            if (obj != null)
+            {
+                return obj;
+            }
+            return "Not Found";
         }
     }
 }

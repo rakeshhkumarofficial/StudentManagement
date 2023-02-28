@@ -21,5 +21,14 @@ namespace StudentManagement.Service
             dbContext.SaveChanges();
             return obj;
         }
+        public object GetSubject()
+        {
+            var obj = dbContext.Subjects;
+            if (obj != null)
+            {
+                return obj;
+            }
+            return "Not Found";
+        }
     }
 }
