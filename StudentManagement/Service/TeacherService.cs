@@ -23,21 +23,101 @@ namespace StudentManagement.Service
             };
             dbContext.Teachers.Add(obj);
             dbContext.SaveChanges();
-            return obj;
+
+            int len = obj == null ? 0 : 1;
+            Models.Response response = new Models.Response();
+            if (len == 0)
+            {
+                response.Data = obj;
+                response.StatusCode = 404;
+                response.Message = "Cannot Add Teacher";
+                return response;
+            }
+            if (len == 1)
+            {
+                response.Data = obj;
+                response.StatusCode = 200;
+                response.Message = "Teacher Added";
+            }
+            return response;
         }
         public object GetTeacher(Guid Id)
         {
             var teacher = dbContext.Teachers.Find(Id);
-            if (teacher == null)
+            int len = teacher == null ? 0 : 1;
+            Models.Response response = new Models.Response();
+            if (len == 0)
             {
-                return "Not Found";
+                response.Data = teacher;
+                response.StatusCode = 404;
+                response.Message = "Not Found";
+                return response;
             }
             var obj = from s in dbContext.Students where s.Subject == teacher.Subject select new {s.Subject, s.StudentName};
             if (obj != null)
             {
-                return obj;
+                if (len == 1)
+                {
+                    response.Data = obj;
+                    response.StatusCode = 200;
+                    response.Message = "Teacher Details";
+                }
             }
-            return "Not Found";
+            return response;
+        }
+        public object DeleteTeacher(Guid Id)
+        {
+            var obj = dbContext.Teachers.Find(Id);
+            int len = obj == null ? 0 : 1;
+            Models.Response response = new Models.Response();
+            if (len == 0)
+            {
+                response.Data = obj;
+                response.StatusCode = 404;
+                response.Message = "Not Found";
+                return response;
+            }
+            if (obj != null)
+            {
+                dbContext.Remove(obj);
+                dbContext.SaveChanges();
+                if (len == 1)
+                {
+                    response.Data = obj;
+                    response.StatusCode = 200;
+                    response.Message = "Teacher deleted";
+                }
+            }
+            return response;
+            
+        }
+        public object UpdateTeacher(Guid Id, UpdateTeacher updateTeacher)
+        {
+
+            var obj = dbContext.Teachers.Find(Id);
+            int len = obj == null ? 0 : 1;
+            Models.Response response = new Models.Response();
+            if (len == 0)
+            {
+                response.Data = obj;
+                response.StatusCode = 404;
+                response.Message = "Not Found";
+                return response;
+            }
+            if (updateTeacher.TeacherName != "string") { obj.TeacherName = updateTeacher.TeacherName; }
+            if (updateTeacher.Email != "string") { obj.Email = updateTeacher.Email; }
+            if (updateTeacher.Password != "string") { obj.Password = updateTeacher.Password; }
+            if (updateTeacher.Subject != "string") { obj.Subject = updateTeacher.Subject; }
+
+            dbContext.SaveChanges();
+
+            if (len == 1)
+            {
+                response.Data = obj;
+                response.StatusCode = 200;
+                response.Message = "Teacher details updated";
+            }
+            return response;
         }
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ChicMic Technologies\\Desktop\\StudentManagement\\StudentManagement\\StudentManagement.csproj": {}
+    "C:\\Users\\ChicMic\\Desktop\\StudentManagement\\StudentManagement\\StudentManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ChicMic Technologies\\Desktop\\StudentManagement\\StudentManagement\\StudentManagement.csproj": {
+    "C:\\Users\\ChicMic\\Desktop\\StudentManagement\\StudentManagement\\StudentManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ChicMic Technologies\\Desktop\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+        "projectUniqueName": "C:\\Users\\ChicMic\\Desktop\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
         "projectName": "StudentManagement",
-        "projectPath": "C:\\Users\\ChicMic Technologies\\Desktop\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
-        "packagesPath": "C:\\Users\\ChicMic Technologies\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ChicMic Technologies\\Desktop\\StudentManagement\\StudentManagement\\obj\\",
+        "projectPath": "C:\\Users\\ChicMic\\Desktop\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+        "packagesPath": "C:\\Users\\ChicMic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ChicMic\\Desktop\\StudentManagement\\StudentManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ChicMic Technologies\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ChicMic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.3, )"
@@ -70,6 +74,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.6, )"
             }
           },
           "imports": [
@@ -91,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

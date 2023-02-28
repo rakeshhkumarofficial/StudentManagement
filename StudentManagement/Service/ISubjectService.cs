@@ -6,5 +6,7 @@ namespace StudentManagement.Service
     {
         public object AddSubject(Subject subject);
         public object GetSubject();
+        public object DeleteSubject(Guid Id);
+        public object UpdateSubject(Guid Id, UpdateSubject updateSubject);
     }
 }

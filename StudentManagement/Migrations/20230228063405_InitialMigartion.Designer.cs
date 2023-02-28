@@ -12,8 +12,8 @@ using StudentManagement.Data;
 namespace StudentManagement.Migrations
 {
     [DbContext(typeof(StudentManagementAPIDbContext))]
-    [Migration("20230227104011_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230228063405_InitialMigartion")]
+    partial class InitialMigartion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
